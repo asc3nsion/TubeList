@@ -92,10 +92,6 @@ def create_video_objects(ids):
 	return videos
 
 
-
-create_video_objects(vid_ids)
-
-
 tubelist.open_movies_page(create_video_objects(vid_ids))
 
 
