@@ -40,11 +40,13 @@ main_page_head = '''
             width: 100%;
             height: 100%;
             background-color: #99FF99;
+            transition: background-color 1.0s ease;
         }
         #trailer-video:hover {
             width: 100%;
             height: 100%;
             background-color: #99FF99;
+            transition: background-color 1.0s ease;
         }
         .movie-tile {
             margin-bottom: 5px;
@@ -128,7 +130,7 @@ main_page_head = '''
             $('#box10').animate({ "right": "-50%" }, "slow" );
             $('#box11').animate({ "top": "-50%" }, "slow" );
             $('#box12').animate({ "bottom": "-50%" }, "slow" );
-            
+
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
@@ -217,18 +219,6 @@ main_page_content = '''
         <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
     </div>
     <div class='square-box' id='box12'>
-        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
-    </div>
-    <div class='square-box' id='box13'>
-        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
-    </div>
-    <div class='square-box' id='box14'>
-        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
-    </div>
-    <div class='square-box' id='box15'>
-        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
-    </div>
-    <div class='square-box' id='box16'>
         <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
     </div>
   </body>
