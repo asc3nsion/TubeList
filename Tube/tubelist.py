@@ -39,10 +39,12 @@ main_page_head = '''
         #trailer-video {
             width: 100%;
             height: 100%;
-            background-color: #EB5833;
-            transition: background-color 1.0s ease;
-            box-shadow: inset 0 0 0 10px #FFC2B2;
-            transition: box-shadow 0.5s ease;
+            background-color: #99FF99;
+        }
+        #trailer-video:hover {
+            width: 100%;
+            height: 100%;
+            background-color: #99FF99;
         }
         .movie-tile {
             margin-bottom: 5px;
@@ -52,9 +54,8 @@ main_page_head = '''
         }
         .movie-tile:hover {
             background-color: #EB5833;
-            transition: background-color 1.0s ease;
             box-shadow: inset 0 0 0 10px #FFC2B2;
-            transition: box-shadow 0.5s ease;
+            transition: background-color 1.0s ease, box-shadow 0.5s ease;
             cursor: pointer;
         }
         .scale-media {
@@ -89,6 +90,20 @@ main_page_head = '''
         .movie-title{
             color: #FFC2B2;
         }
+        .square-box{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index:99;
+            box-shadow: inset 0 0 0 2px #99FF99;
+        }
+        .square-box:hover{
+
+            transition: box-shadow 0.5s ease;
+        }
+
     </style>
     <script type="text/javascript" charset="utf-8">
         // Pause the video when the modal is closed
@@ -96,9 +111,23 @@ main_page_head = '''
             // Remove the src so the player itself gets removed, as this is the only
             // reliable way to ensure the video stops playing in IE
             $("#trailer-video-container").empty();
+            $('.square-box').fadeOut().css('top', 0).css('left', 0);
         });
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
+            $('.square-box').fadeIn();
+            $('#box1').animate({ "left": "-15%" }, "slow" );
+            $('#box2').animate({ "right": "-15%" }, "slow" );
+            $('#box3').animate({ "top": "-85%" }, "slow" );
+            $('#box4').animate({ "bottom": "-85%" }, "slow" );
+            $('#box5').animate({ "left": "-85%" }, "slow" );
+            $('#box6').animate({ "right": "-85%" }, "slow" );
+            $('#box7').animate({ "top": "-15%" }, "slow" );
+            $('#box8').animate({ "bottom": "-15%" }, "slow" );
+            $('#box9').animate({ "left": "-50%" }, "slow" );
+            $('#box10').animate({ "right": "-50%" }, "slow" );
+            $('#box11').animate({ "top": "-50%" }, "slow" );
+            $('#box12').animate({ "bottom": "-50%" }, "slow" );
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
@@ -106,10 +135,12 @@ main_page_head = '''
               'type': 'text-html',
               'src': sourceUrl,
               'frameborder': 0
-            }));
+            })).hide();
+            $("#trailer-video-container").fadeIn();
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
+          $('.square-box').hide();  
           $('.movie-tile').hide().first().show("fast", function showNext() {
             $(this).next("div").show("fast", showNext);
           });
@@ -146,6 +177,42 @@ main_page_content = '''
     </div>
     <div class="container">
       {movie_tiles}
+    </div>
+    <div class='square-box' id='box1'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box2'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box3'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box4'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box5'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box6'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box7'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box8'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box9'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box10'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box11'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box12'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
     </div>
   </body>
 </html>
