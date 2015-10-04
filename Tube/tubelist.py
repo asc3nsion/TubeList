@@ -97,7 +97,7 @@ main_page_head = '''
             width: 100%;
             height: 100%;
             z-index:99;
-            box-shadow: inset 0 0 0 2px #99FF99;
+            box-shadow: inset 0 0 2px 2px #99FF99;
         }
         .square-box:hover{
 
@@ -135,8 +135,7 @@ main_page_head = '''
               'type': 'text-html',
               'src': sourceUrl,
               'frameborder': 0
-            })).hide();
-            $("#trailer-video-container").fadeIn();
+            }));
         });
         // Animate in the movies when the page loads
         $(document).ready(function () {
@@ -177,6 +176,11 @@ main_page_content = '''
     </div>
     <div class="container">
       {movie_tiles}
+    </div>
+    <div class="navbar-bottom navbar-fixed-bottom" role="navigation">
+        <div class="container">
+            <div class="navbar-header"></div>
+        </div>
     </div>
     <div class='square-box' id='box1'>
         <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
