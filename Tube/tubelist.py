@@ -116,18 +116,19 @@ main_page_head = '''
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
             $('.square-box').fadeIn();
-            $('#box1').animate({ "left": "-15%" }, "slow" );
-            $('#box2').animate({ "right": "-15%" }, "slow" );
-            $('#box3').animate({ "top": "-85%" }, "slow" );
-            $('#box4').animate({ "bottom": "-85%" }, "slow" );
-            $('#box5').animate({ "left": "-85%" }, "slow" );
-            $('#box6').animate({ "right": "-85%" }, "slow" );
-            $('#box7').animate({ "top": "-15%" }, "slow" );
-            $('#box8').animate({ "bottom": "-15%" }, "slow" );
+            $('#box1').animate({ "left": "-25%" }, "slow" );
+            $('#box2').animate({ "right": "-25%" }, "slow" );
+            $('#box3').animate({ "top": "-75%" }, "slow" );
+            $('#box4').animate({ "bottom": "-75%" }, "slow" );
+            $('#box5').animate({ "left": "-75%" }, "slow" );
+            $('#box6').animate({ "right": "-75%" }, "slow" );
+            $('#box7').animate({ "top": "-25%" }, "slow" );
+            $('#box8').animate({ "bottom": "-25%" }, "slow" );
             $('#box9').animate({ "left": "-50%" }, "slow" );
             $('#box10').animate({ "right": "-50%" }, "slow" );
             $('#box11').animate({ "top": "-50%" }, "slow" );
             $('#box12').animate({ "bottom": "-50%" }, "slow" );
+            
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
@@ -216,6 +217,18 @@ main_page_content = '''
         <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
     </div>
     <div class='square-box' id='box12'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box13'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box14'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box15'>
+        <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
+    </div>
+    <div class='square-box' id='box16'>
         <div class='square-content'><div><span>Aspect ratio 1:1</span></div></div>
     </div>
   </body>
