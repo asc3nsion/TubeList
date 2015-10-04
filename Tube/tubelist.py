@@ -18,14 +18,17 @@ main_page_head = '''
     <link href='https://fonts.googleapis.com/css?family=Cantarell:400,400italic' rel='stylesheet' type='text/css'>
     <style type="text/css" media="screen">
         body {
-            padding-top: 80px;
+            padding-top: 20px;
             background-color: #130400;
             font-family: 'Cantarell', italic;
         }
+        .container{
+            width: 100%
+        }
         #trailer .modal-dialog {
-            margin-top: 200px;
-            width: 640px;
-            height: 480px;
+            margin-top: 80px;
+            width: 1280px;
+            height: 720px;
         }
         .hanging-close {
             position: absolute;
@@ -36,13 +39,22 @@ main_page_head = '''
         #trailer-video {
             width: 100%;
             height: 100%;
+            background-color: #EB5833;
+            transition: background-color 1.0s ease;
+            box-shadow: inset 0 0 0 10px #FFC2B2;
+            transition: box-shadow 0.5s ease;
         }
         .movie-tile {
-            margin-bottom: 20px;
+            margin-bottom: 5px;
             padding-top: 20px;
+            padding-left: 5px;
+            padding-right: 5px;
         }
         .movie-tile:hover {
             background-color: #EB5833;
+            transition: background-color 1.0s ease;
+            box-shadow: inset 0 0 0 10px #FFC2B2;
+            transition: box-shadow 0.5s ease;
             cursor: pointer;
         }
         .scale-media {
@@ -135,16 +147,6 @@ main_page_content = '''
     <div class="container">
       {movie_tiles}
     </div>
-    <div class="navbar-bottom navbar-fixed-bottom" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-          </div>
-        </div>
-    </div>
-    <!-- SVG code -->
-    <svg width="300px" height="300px" xmlns="http://www.w3.org/2000/svg">
-        <text x="10" y="50" font-size="30">My SVG</text>
-    </svg>
   </body>
 </html>
 '''
@@ -153,8 +155,8 @@ main_page_content = '''
 # A single movie entry html template
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="320" height="180">
-    <h2 class="movie-title">{movie_title}</h2>
+    <img src="{poster_image_url}" width="480" height="360">
+    <p class="movie-title">{movie_title}</p>
 </div>
 '''
 

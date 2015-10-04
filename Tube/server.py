@@ -3,9 +3,10 @@ import tubelist
 import os
 import json, requests
 
-#These are the youtube video ids that we will serve to the page
+# These are the youtube video ids that we will serve to the page
 vid_ids 	= ["IeyPqo1t3jM", "6-x_21W1nX0", "-6-3pbRz4YM", "k9WSx7jZ-Rk", "Qm-AtSz628k", "wYxSbJHshAo", "hkbVbJkBk_w", "BcOI7TqbxhA", "KeOWFI9uZkQ"]
 
+# load in api key and get data needed for query
 youtube = os.path.join(os.getcwd(), 'youtube.json')
 query = json.loads(open(youtube).read())
 
@@ -82,7 +83,7 @@ def create_video_objects(ids):
 
 		title 	= get_video_title(data)
 		dscr 	= get_video_description(data)
-		image 	= get_video_img(data, 'medium')
+		image 	= get_video_img(data, 'high')
 
 		video 	= media.Video(id, title, dscr, image)
 
